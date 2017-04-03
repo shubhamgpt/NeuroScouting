@@ -83,6 +83,10 @@ public class React : GameBase
 		StartInput();
 		stim.SetActive(true);
 
+		//Random position for Stimulus (rectangle) 
+		Vector3 rand_pos = new Vector3 (Random.Range (25f, 1000f), Random.Range (25f, 300f), 0);
+		stim.transform.position = rand_pos;
+
 		yield return new WaitForSeconds(((ReactTrial)t).duration);
 		stim.SetActive(false);
 		EndInput();
